@@ -33,3 +33,7 @@ $(TEST): $(SRC) $(INCLUDE)
 
 $(TEST_CPU) : $(SRC_CPU) $(INCLUDE)
 	@$(NVCC) $(NVCC_FLAGS) $(INCLUDE_PATHS) -Xcompiler=-fopenmp $< -o $@
+
+all : modulus128.cu $(INCLUDE)
+	@echo "     INCLUDE     " ${INCLUDE_PATHS}
+	@$(NVCC) $(NVCC_FLAGS) $(INCLUDE_PATHS) $(CUDASIEVE_LIB) $(LIBS) -Xcompiler=-fopenmp $< -o $@
