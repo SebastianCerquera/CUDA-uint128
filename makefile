@@ -1,8 +1,8 @@
 
 
 # Location of the CUDA toolkit
-CUDA_DIR = /opt/cuda
-LEGACY_CC_PATH = /bin/g++-5
+CUDA_DIR = /usr/local/cuda-9.0
+LEGACY_CC_PATH = /usr/bin/g++-5
 # Compute capability of the target GPU
 GPU_ARCH = compute_30
 GPU_CODE = sm_30,sm_32,sm_35,sm_37,sm_50,sm_52,sm_53,sm_60,sm_61,sm_62
@@ -23,8 +23,8 @@ TEST_CPU = testcpu
 SRC = test128.cu
 SRC_CPU = test128cpu.cu
 INCLUDE = cuda_uint128.h
-INCLUDE_PATHS = -I /home/curtis/Projects/CUDASieve/include
-CUDASIEVE_LIB = /home/curtis/Projects/CUDASieve/libcudasieve.a
+INCLUDE_PATHS = -I /tmp/CUDASieve/include
+CUDASIEVE_LIB = /tmp/CUDASieve/libcudasieve.a
 LIBS = -lcurand
 
 $(TEST): $(SRC) $(INCLUDE)
